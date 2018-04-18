@@ -41,6 +41,7 @@ var employees = [
     "department": "Research and Development"
   }
 ];
+
 // Do not edit the code above.
 
 /*
@@ -50,8 +51,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
-
+function employeeUpdater(){
+  employees.forEach((employee, i)=> {
+    if(employee.firstName === "Theo"){
+      employees.splice(i, 1);
+    }
+    else if(employee.firstName === "Lorie"){
+      employee.department = 'HR'
+    }
+  })
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -68,7 +78,25 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(arr){
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] === arr[j]){
+        arr.splice([i], 1)
+      }
+    }
+  }
+  for(let i = 0; i < arr.length; i++){
+    for(let j = i + 1; j < arr.length; j++){
+      if(arr[i] === arr[j]){
+        arr.splice([i], 1)
+        
+      }
+    }
+  }
+  return arr;
+}
+removeDuplicates(workplaceAccidents);
 
 
 
